@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈功能详细描述〉
@@ -28,5 +30,10 @@ public class HelloController {
     @GetMapping("/hello")
     public Mono<String> hello(){
         return Mono.just("Welcome to reactive world ~");
+    }
+    
+    @GetMapping("/now")
+    public Mono<LocalDateTime> now(){
+        return Mono.just(LocalDateTime.now());
     }
 }
